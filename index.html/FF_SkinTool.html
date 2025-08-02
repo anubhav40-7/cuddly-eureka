@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Golden Skin Tool - FF</title>
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    h1 {
+      color: gold;
+    }
+    #startBtn:disabled {
+      background-color: gray;
+    }
+    .bundle {
+      background-color: #222;
+      margin: 15px auto;
+      padding: 10px;
+      width: 300px;
+      border-radius: 12px;
+      border: 1px solid gold;
+    }
+    img {
+      width: 100%;
+      border-radius: 8px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background: gold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #bundles {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Golden Skin Tool</h1>
+
+  <p><b>Status:</b> <span id="status">Not connected to Suzuki</span></p>
+  <button onclick="connectSuzuki()">Connect to Suzuki</button>
+  <br><br>
+  <button id="startBtn" onclick="showBundles()" disabled>Start</button>
+
+  <div id="bundles">
+    <div class="bundle">
+      <h3>Ajjubhai Bundle (Wolfrahh)</h3>
+      <img src="https://i.imgur.com/6n8H5yD.jpeg" alt="Ajjubhai">
+      <button onclick="applySkin('Ajjubhai on Wolfrahh')">Apply Bundle</button>
+    </div>
+
+    <div class="bundle">
+      <h3>Amitbhai Bundle (Hayato)</h3>
+      <img src="https://i.imgur.com/np2gVi3.jpeg" alt="Amitbhai">
+      <button onclick="applySkin('Amitbhai on Hayato')">Apply Bundle</button>
+    </div>
+
+    <div class="bundle">
+      <h3>Romeo Gamer S1 (Chrono)</h3>
+      <img src="https://i.imgur.com/SHIscqU.jpeg" alt="Romeo S1">
+      <button onclick="applySkin('Romeo S1 on Chrono')">Apply Bundle</button>
+    </div>
+
+    <div class="bundle">
+      <h3>Romeo Gamer S2 (Skyler)</h3>
+      <img src="https://i.imgur.com/CvYBa2O.jpeg" alt="Romeo S2">
+      <button onclick="applySkin('Romeo S2 on Skyler')">Apply Bundle</button>
+    </div>
+
+    <div class="bundle">
+      <h3>Romeo Gamer Normal (DJ Alok)</h3>
+      <img src="https://i.imgur.com/3a5O0Hc.jpeg" alt="Romeo Normal">
+      <button onclick="applySkin('Romeo Normal on DJ Alok')">Apply Bundle</button>
+    </div>
+  </div>
+
+  <script>
+    let isConnected = false;
+
+    function connectSuzuki() {
+      isConnected = true;
+      document.getElementById("status").innerText = "Connected to Suzuki";
+      document.getElementById("startBtn").disabled = false;
+      alert("Suzuki connected successfully!");
+    }
+
+    function showBundles() {
+      document.getElementById("bundles").style.display = "block";
+      window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function applySkin(name) {
+      alert(name + " applied successfully! Restart game to see the skin.");
+    }
+  </script>
+
+</body>
+</html>
